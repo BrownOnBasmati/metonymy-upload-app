@@ -1,0 +1,30 @@
+<h1>Artists (<%= @artists.size %>)</h1>
+
+<div id="artists">
+<table class="tablesorter">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>last name</th>
+            <th>first name</th>
+            <th>action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @artists.each do |artist| %>
+        <tr>
+            <td><%= artist.id %></td>
+            <td><%=h artist.last_name %></td>
+            <td><%=h artist.first_name %></td>
+            <td><%= link_to 'show', artist %> | 
+            <%= link_to 'edit', edit_artist_path(artist) %> | 
+            <%= link_to 'delete', artist, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>
+<br/>
+<%= will_paginate @artists %>
+<br/>
+<%= link_to 'New artist', new_artist_path %>

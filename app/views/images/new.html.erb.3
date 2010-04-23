@@ -1,0 +1,33 @@
+<h3>Select three images to upload</h3>
+<form id="file_upload_1" method="post" action="/api/images" enctype="multipart/form-data">
+	<div style="margin:0;padding:0;display:inline">
+		<input name="authenticity_token" type="hidden" value="T12n3XRJJzrWkrKdtpk6sMQe9QvQ0+dsYMZIdlgcJwA=" />
+	</div>
+	<input type="file" id="<%= upload_tag %>" name="image" size="64" />
+	<input type="submit" id="upload" name="commit" value="Upload" />
+	<div id="progress_1" class="progress_bar"style="display: none;">
+        <img alt="Loading..." src="/images/ajax-loader.gif" />
+    </div>
+</form>
+
+<form id="file_upload_2" method="post" action="/api/images" enctype="multipart/form-data">
+	<div style="margin:0;padding:0;display:inline">
+		<input name="authenticity_token" type="hidden" value="T34n3XRJJzrWkrKdtpk6sMQe9QvQ0+dsYMZIdlgcJwA=" />
+	</div>
+	<input type="file" id="<%= upload_tag %>" name="image" size="64" />
+	<input type="submit" id="upload" name="commit" value="Upload" />
+	<div id="progress_2" class="progress_bar" style="display: none;">
+        <img alt="Loading..." src="/images/ajax-loader.gif" />
+	</div>
+</form>
+
+<form id="file_upload_3" method="post" action="/api/images" enctype="multipart/form-data">
+	<div style="margin:0;padding:0;display:inline">
+		<input name="authenticity_token" type="hidden" value="T56n3XRJJzrWkrKdtpk6sMQe9QvQ0+dsYMZIdlgcJwA=" />
+	</div>
+	<input type="file" id="<%= upload_tag %>" name="image" size="64" />
+	<input type="submit" id="upload" name="commit" value="Upload" />
+	<div id="progress_3" class="progress_bar"style="display: none;">
+        <img alt="Loading..." src="/images/ajax-loader.gif" />
+    </div>
+</form>

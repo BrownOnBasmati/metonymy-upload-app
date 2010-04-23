@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Images: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag "tablesorter/style.css" %>
+  <%= stylesheet_link_tag 'screen' %>
+  <%= stylesheet_link_tag "scaffold" %>
+</head>
+<body>
+<div id='wrapper'>
+<%= yield %>
+</div>
+</body>
+<script type="text/javascript" src="/javascripts/jquery-1.4.min.js"></script>
+<script type="text/javascript">var $j = jQuery.noConflict();</script>
+<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+$j(document).ready(function() {
+   $j("table.tablesorter").tablesorter({
+        headers: {1: { sorter: false },5: { sorter: false }},
+        sortList: [[0,0]]
+    });
+});
+</script>
+<script type="text/javascript">
+$j(document).ready(function() {
+	//$('input[type=submit]').attr('disabled', 'disabled');
+	/**var files_selected=0;
+	$('input[type=file]').click(function() {
+		files_selected+=1;
+		if(files_selected>=3) {}
+			//$('input[type=submit]').removeAttr('disabled');
+	});**/
+	
+	/*$j.ajaxSetup({dataType: "json"});
+	var options = { 
+		url:        "/api/images",
+      	beforeSubmit: function(req) {
+			$('input[type=submit]',this).attr('disabled', 'disabled');
+			$('input[type=file]',this).attr('disabled', 'disabled');
+			$("#progress_bar").fadeIn("slow");
+      	},
+      	success: function(resp) {
+			//alert(resp.upload);
+            $("#progress_bar").fadeOut("slow");
+			uploads(resp);
+		}
+	};
+	$("#file_upload").ajaxForm(options);
+	
+	var uploads=function(data) {
+		var ids=data.ids;
+		var keys=data.keys;
+		
+		var URL="/api/images"
+		var urls=[];
+		for (var i=ids.length;i>0;--i) {
+			for (var j=keys.length;j>0;--j) {
+				urls.push([URL,i,"medium",j].join('/'));
+			}
+		}
+		alert(urls);
+	}*/
+	
+	$j(".progress_bar").hide();
+	$j("#file_upload").submit(function() {
+        $j(".progress_bar").fadeIn("fast");
+    });
+});
+</script>
+</html>

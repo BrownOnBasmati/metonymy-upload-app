@@ -1,0 +1,33 @@
+<h1>Images (<%= @images.size %>)</h1>
+<div id="images">
+    <table class="tablesorter">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>square | thumbnail</th>
+                <th>content type</th>
+                <th>file name</th>
+                <th>size (KB)</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @images.each do |image| %>
+                <tr>
+                <td><%= image.id %></td>
+                <td><%= link_to image_tag(image.url(:square)), image.url(:medium) %> | <%= link_to image_tag(image.url(:thumb)), image.url(:large) %></td>
+                <td><%= image.content_type %></td>
+                <td><%= image.file_name %></td>
+                <td><%= image.file_size/1024 %></td>
+                <td><%= link_to 'show', image %> |
+                    <%= link_to 'edit', edit_image_path(image) %> |
+                    <%= link_to 'delete', image, :confirm => 'Are you sure?', :method => :delete %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<br/>
+<%= will_paginate @images %>
+<br/>
+<%= link_to 'Upload an image', new_image_path %>

@@ -1,0 +1,21 @@
+<h1>Edition (<%= @edition.id %>)</h1>
+<p>
+  <b>Artist:</b>
+  <%=h @edition.artist_id %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%=h @edition.image_id %>
+<div id="images" class="images">
+<%= render :partial => "images/image", :object => Image.find_by_id(@edition.image_id) %>
+</div>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @edition.name %>
+</p>
+
+<%= link_to 'Edit', edit_edition_path(@edition) %> |
+<%= link_to 'Back', editions_path %>

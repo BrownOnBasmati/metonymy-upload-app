@@ -1,0 +1,21 @@
+<div id="uploaded">
+<% if params[:ids] %> 
+    <h4>You uploaded these files</h4>
+    <div id="images" class="images">
+        <%= render :partial => "image", :collection => @images %>
+    </div>
+    <% if params[:artist_id] %>
+        <h4>Review your images then submit</h4>
+        <div id="review_submit">
+        <% form_for(@artist, :html => {:multipart => true}) do |form| %>
+            <p>
+                <input type="hidden" name="ids" value="<%= params[:ids] %>">
+            </p>            
+            <p>
+                <input id="commit" name="commit" type="submit" value="Save" />
+            </p>
+        <% end %>
+        </div>
+    <% end %>
+<% end %>
+</div>

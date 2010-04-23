@@ -1,0 +1,16 @@
+<% unless artist.nil? %>
+<div id="artist_<%= artist.id %>" class="artist">
+<p>
+  <b>First name:</b>
+  <%=h @artist.first_name %>
+</p>
+<p>
+  <b>Last name:</b>
+  <%=h @artist.last_name %>
+</p>
+<p>
+  <b>Bio:</b>
+  <%=h @artist.bio %>
+</p>
+</div>
+<% end %>

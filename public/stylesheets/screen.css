@@ -1,0 +1,85 @@
+body {
+  background-color: #77A6C5;
+}
+
+img {
+    border-style:none;
+}
+
+.image {
+  float: left;
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #ddd;
+  margin: 10px;
+}
+
+.images {
+  overflow: hidden;
+}
+
+#wrapper {
+  margin: 50px auto;
+  width: 90%;
+  padding: 20px 15px;
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border: 2px solid #A0BAC5;
+}
+
+#progress {
+  width: 10%;
+  border: 2px dotted #eee;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+  padding: 5px;  
+  text-align: center;
+  height:10px;
+}
+
+#bar {
+  color: #123456;
+  font-size: 18px;
+  text-align: center;
+  min-width: 1em;
+  padding:0px 0;
+  display: inline;
+  margin-left: 0;
+}
+
+.progress_bar { 
+	width: 100px; 
+	padding: 0px; 
+	/*border: 1px solid gray;*/
+	border:none;
+	margin-right: 1em; 
+	height:1em;
+	margin-left:1em; 
+	display:-moz-inline-stack; 
+	display:inline-block; zoom:1; 
+	*display:inline; 
+	position:relative;
+}
+
+.pagination {
+  background: #F1F1F1;
+  border: 1px solid #E5E5E5;
+  text-align: center;
+  padding: 1em; }
+  .pagination a, .pagination span {
+    padding: .2em .3em; }
+  .pagination span.disabled {
+    color: #AAA; }
+  .pagination span.current {
+    font-weight: bold;
+    background: transparent url(/images/apple-circle.gif) no-repeat 50% 50%; }
+  .pagination a {
+    text-decoration: none;
+    color: black; }
+    .pagination a:hover, .pagination a:focus {
+      text-decoration: underline; 
+}

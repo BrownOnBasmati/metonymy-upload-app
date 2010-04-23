@@ -1,0 +1,13 @@
+<div id="upload">
+    <form id="upload_form" method="post" action="/api/images" enctype="multipart/form-data">
+        <input id="<%= upload_tag %>" name="<%= upload_tag %>" size="64" type="file" />    
+        <% if (params[:id].to_i.eql?3) %>
+            <br/><input id="<%= upload_tag %>" name="<%= upload_tag %>" size="64" type="file" />
+            <br/><input id="<%= upload_tag %>" name="<%= upload_tag %>" size="64" type="file" /><br/>
+        <% end %>
+        <input id="submit" name="commit" type="submit" value="Upload" />
+    </form>
+    <div id="progress_bar" class="progress_bar" style="display: none;">
+        <img alt="Loading..." src="/images/ajax-loader.gif" />
+    </div>
+</div>

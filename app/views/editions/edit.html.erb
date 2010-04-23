@@ -1,0 +1,27 @@
+<h1>Edition (<%= @edition.id %>)</h1>
+
+<% form_for(@edition) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :artist_id %><br />
+    <%= f.text_field :artist_id %>
+  </p>
+  <p>
+    <%= f.label :image_id %><br />
+    <%= f.text_field :image_id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<div id="images" class="images">
+    <%= render :partial => "images/image", :object => Image.find_by_id(@edition.image_id) %>
+</div>
+
+<%= link_to 'Show', @edition %> |
+<%= link_to 'Back', editions_path %>

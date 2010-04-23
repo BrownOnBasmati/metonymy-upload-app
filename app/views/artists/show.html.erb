@@ -1,0 +1,17 @@
+<h2>Artist (<%= @artist.last_name %>, <%= @artist.first_name %>)</h2>
+<div id="artists">
+    <%= render :partial => "artist", :object => @artist %>
+</div>
+
+<h2>Artist Editions</h2>
+<div id="editions">
+    <%= render :partial => "editions/edition", :collection => @artist.editions %>
+</div>
+
+<h2>Edition Images</h2>
+<div id="images" class="images">
+    <%= render :partial => "images/image", :collection => @artist.images %>
+</div>
+
+<%= link_to "Edit", edit_artist_path(@artist) %> |
+<%= link_to "Back", artists_path %>

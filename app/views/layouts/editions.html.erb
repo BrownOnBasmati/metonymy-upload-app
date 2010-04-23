@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Editions:<%= controller.action_name %></title>
+  <%= stylesheet_link_tag "tablesorter/style.css" %>
+  <%= stylesheet_link_tag "screen" %>
+  <%= stylesheet_link_tag "scaffold" %>
+</head>
+<body>
+<div id="wrapper">
+<%= yield %>
+</div>
+</body>
+<script type="text/javascript" src="/javascripts/jquery-1.4.min.js"></script>
+<script type="text/javascript">var $j = jQuery.noConflict();</script>
+<script type="text/javascript" src="/javascripts/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+$j(document).ready(function() { 
+    $j("table.tablesorter").tablesorter({
+headers: {3: { sorter: false},4: { sorter: false }},
+        sortList: [[1,0]]
+    });
+}); 
+</script>
+</html>
